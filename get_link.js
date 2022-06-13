@@ -47,7 +47,6 @@ if (daysSinceStart > numLinks) {
     index = daysSinceStart;
 }
 
-print_dbg(index); // Print index value
-
+print_dbg(index); // Print new index value
 var url = urls[index]; // Set the link to the index value
 print_dbg("URL: " + url); // Print our URL
