@@ -1,0 +1,43 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+		<link href="styles.css" rel="stylesheet" type="text/css">
+		<title>QR Generator</title>
+	</head>
+	<body>
+	    <h1>QR Generator</h1>
+		<div style="width: 300px; padding: 8px; text-align: right;">
+		<fieldset>
+			<label for="qr_content">QR Text:</label>
+			<input id="qr_content" type="text" name="text" value="">
+		</fieldset>
+		<fieldset>
+			<label for="qr_size">Size:</label>
+			<input id="qr_size" type="number" value="192">
+		</fieldset>
+		<button id="b_generate" onClick="generate()">Generate</button>
+		</div>
+			
+        <div id="qrcode"></div>
+
+        <script>
+            function generate() {
+                // Clear previous QR
+                document.getElementById("qrcode").innerHTML = "";
+                
+                var text = document.getElementById("qr_content").value;
+                var qrcode = new QRCode(document.getElementById("qrcode"), {
+                    text: text,
+                    width: document.getElementById("qr_size").value,
+                    height: document.getElementById("qr_size").value,
+                    colorDark : "#000000",
+                    colorLight : "#ffffff",
+                    correctLevel : QRCode.CorrectLevel.H
+                });
+            }
+        </script>
+		
+    </body>
+</html>

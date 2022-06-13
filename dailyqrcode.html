@@ -1,0 +1,40 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+
+        <!-- Get today's link -->
+        <script src="link.js"></script>
+		<title>Daily QR Code</title>
+	</head>
+	<body>
+	    <h1>Daily QR Code&nbsp;</h1>
+		<div id="qrcode"></div>
+		
+		<!-- Generate QR -->
+        <script>
+            var qrcode = new QRCode(document.getElementById("qrcode"), {
+                text: url,
+                width: 192,
+                height: 192,
+                colorDark : "#000000",
+                colorLight : "#ffffff",
+                correctLevel : QRCode.CorrectLevel.H
+            });
+        </script>
+		
+		<!-- Spacer -->
+        <p>&nbsp;</p> 
+		
+		<!-- Insert clickable hyperlink -->
+        <script>
+            document.write('<p id="f_link">No QR scanner? Click <a href="' + url + '">' + "here" + '</a>.</p>');
+            // document.getElementById("f_link").style.display = "none"; // Hide
+        </script>
+		
+<!-- 
+		<p>Come back daily for new codes!</p>
+ -->
+    </body>
+</html>
