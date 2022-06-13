@@ -14,10 +14,12 @@
 		
 		<!-- Generate QR -->
         <script>
+            var qr_size = 192; // in pixels
+
             var qrcode = new QRCode(document.getElementById("qrcode"), {
                 text: url,
-                width: 192,
-                height: 192,
+                width: qr_size,
+                height: qr_size,
                 colorDark : "#000000",
                 colorLight : "#ffffff",
                 correctLevel : QRCode.CorrectLevel.H
