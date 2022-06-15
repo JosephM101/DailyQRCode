@@ -24,7 +24,7 @@ function print_dbg(msg) {
  
 */
 
-var startDate = new Date(2022, 5, 13); // Project started on 6/13/2022; we'll use that as our reference for getting a new link
+var startDate = new Date(2022, 5, 15); // Project started on 6/13/2022; we'll use that as our reference for getting a new link
 
 var daysSinceStart = Math.floor((new Date() - startDate) / (1000 * 60 * 60 * 24)); // Calculate the number of days since the project started
 daysSinceStart = daysSinceStart < 0 ? daysSinceStart * -1 : daysSinceStart; // Make sure it's positive
